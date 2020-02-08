@@ -89,14 +89,7 @@ body {
             top: -45px;
         }
         .cover {
-            background: repeating-linear-gradient(
-              90deg,
-              #ff6359,
-              #ff6359, 75px,
-              #09d1c2 75px,
-              #09d1c2 105px,
-              #ff6359 105px
-            );
+            background: #ff6359 url("images/box_strip.png") no-repeat center  fixed;
             width: 180px;
             height: 35px;
             box-shadow: 1px 0px 10px #000;
@@ -113,7 +106,7 @@ body {
             margin-left: -85px;
             width: 150px;
             height: 175px;
-            animation: mcafee 1.5s 4s forwards;
+            animation: mcafee 1.5s 3.5s forwards;
             transform: scale(0);
             z-index: 98;
             opacity: 0;
@@ -146,7 +139,7 @@ body {
             text-align: center;
             z-index: 97;
             opacity: 0;
-            animation: title 1.5s 5s forwards;
+            animation: title 1.5s 4.5s forwards;
         }
         .title span {
             font-weight: bold;
