@@ -11,19 +11,20 @@ body {
             margin-left: -375px;
             width: 750px;
             height: 550px;
-            border: 1px solid #000;
+            border: 2px solid #000;
             overflow: hidden;
         }
         .rounded {
-            position: relative;
+            position: fixed;
             top: 50%;
             left: 50%;
-            margin-left: -100px;
-            margin-top: -100px;
+            margin-left: -98px;
+            margin-top: -67px;
             width: 200px;
             height: 200px;
             border-radius: 50%;
             overflow: hidden;
+            z-index: 100;
         }
         .box {
             background: 
@@ -36,29 +37,70 @@ body {
           #ff0000 20px
         )  fixed;
             position: relative;
-            top: 50%;
+            top: calc(50% - 50px);
             left: 50%;
             width: 160px;
             height: 100px;
             margin-left: -80px;
-            margin-top: -50px;
             animation: box 3s;
-            z-index: 98;
         }
-        .cover {
-            background: 
-        url("images/box_strip.png") no-repeat center,
-        #ff6359;
+        .cover_full {
             position: relative;
-            top: calc(50% - 50px);
-            left: 50%;
-            margin-top: 0px;
-            margin-left: -90px;
+            top: calc(50% - 85px);
+            left: calc(50% - 90px);
+            width: 180px;
+            height: 70px;
+            z-index: 101;
+            animation: boxcover 2s 3s forwards;
+        }
+        .kesher {
             width: 180px;
             height: 35px;
-            box-shadow: 0 3px 10px #000;
-            z-index: 99;
-            animation: boxcover 2s 3s forwards;
+            position: relative;
+        }
+        .papiyon {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 50px solid #09d1c2;
+            border-radius: 10px;
+            float: left;
+            position: relative;
+        }
+        #p1 {
+            transform: rotate(-45deg);
+            left: 30%;
+        }
+        #p2 {
+            transform: rotate(45deg) scale(0.85);
+            left: 15%;
+        }
+        #p3 {
+            transform: rotate(-45deg) scale(0.5);
+            border-top: 50px solid #fac464;
+            top: 3px;
+            left: -25%;
+        }
+        #p4 {
+            transform: rotate(45deg) scale(0.35);
+            border-top: 50px solid #fac464;
+            left: 40%;
+            top: -45px;
+        }
+        .cover {
+            background: repeating-linear-gradient(
+              90deg,
+              #ff6359,
+              #ff6359, 75px,
+              #09d1c2 75px,
+              #09d1c2 105px,
+              #ff6359 105px
+            );
+            width: 180px;
+            height: 35px;
+            box-shadow: 1px 0px 10px #000;
+            position: relative;
         }
         .mcafee {
             background-image: url("images/mcafee.png");
@@ -71,7 +113,7 @@ body {
             margin-left: -85px;
             width: 150px;
             height: 175px;
-            animation: mcafee 1.5s 3.5s forwards;
+            animation: mcafee 1.5s 4s forwards;
             transform: scale(0);
             z-index: 98;
             opacity: 0;
@@ -83,9 +125,9 @@ body {
             background-position: center;
             position: absolute;
             top: calc(50% - 210px);
-            left: calc(50% - 175px);
+            left: calc(50% - 170px);
             transform: scale(0.85);
-            width: 350px;
+            width: 340px;
             height: 210px;
             z-index: 96;
             animation: light 1.5s 3.5s forwards;
@@ -104,7 +146,7 @@ body {
             text-align: center;
             z-index: 97;
             opacity: 0;
-            animation: title 1.5s 4.5s forwards;
+            animation: title 1.5s 5s forwards;
         }
         .title span {
             font-weight: bold;
@@ -155,12 +197,11 @@ body {
             10% {transform: translateY(0) rotate(-5deg)}
             15% {transform: translateY(0) rotate(5deg)}
             20% {transform: translateY(0) rotate(-5deg)}
-            60% {transform: translateY(-200px) translateX(100px) rotateZ(90deg)}
             100% {transform: translateY(-900px) translateX(300px) rotate(125deg);}
         }
         @keyframes mcafee {
             0% {transform: translateY(50px) rotate(0) scale(0.1);opacity: 0}
-            20% {transform: translateY(50px) rotate(0) scale(0.6);opacity: 1}
+            20% {transform: translateY(50px) rotate(0) scale(0.4);opacity: 1}
             100% {transform: translateY(-50px) rotate(-10deg) scale(0.8); opacity: 1}
         }
         @keyframes light {
